@@ -1,16 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PicsumComponent} from './picsum/picsum.component';
-import {AppComponent} from './app.component';
+import { PictureListComponent } from './picture-list/picture-list.component';
 
-const routes: Routes = [{
-  path : 'picsum',
-  component: PicsumComponent
-},
-  {
-    path : '*',
-    component: AppComponent
-  },
+const routes: Routes = [
+  {path:'', redirectTo:'/gallery', pathMatch: 'full'},
+  {path:'gallery', component: PictureListComponent}
 ];
 
 @NgModule({

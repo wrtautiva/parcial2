@@ -1,0 +1,31 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="all">
+    <div class="Header">
+        <h1>Parcial Galeria</h1>
+    </div>
+    <div class="content">
+        <mat-form-field>
+            <mat-label>Set size page</mat-label>
+            <input matInput type="number">
+        </mat-form-field>
+        <br>
+</div>
+
+<div class="grid">
+        <div class="image" *ngFor= 'let picture of pictures | paginate: { itemsPerPage: pageSize, currentPage: page }'>
+            <app-picture  [picture]="picture"></app-picture>
+        </div>
+    </div>
+    <div style="text-align:center">
+    <pagination-controls (pageChange)="page = $event"maxSize="9" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+    <br>
+
+    <div class="footer">
+        <h3>Sobre nosotros</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Unde minus pariatur eveniet amet repellendus consequatur
+             maiores deleniti error iure necessitatibus exercitationem doloremque illum repudiandae,
+             suscipit debitis enim quae? Minus, vero!</p>
+    </div>
+</div>
